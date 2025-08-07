@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscription Événement</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+    form { background: #fff; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    input, select { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 10px 15px; background: #0066cc; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    canvas { display: block; margin: 20px auto; border: 1px solid #050505e3; }
+    #confirmation { text-align: center; font-size: 18px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<form id="inscriptionForm">
+  <img src="https://www.premiercap.fr/wp-content/uploads/2020/11/Templates-vignettes-Blog-7-6.png"
+     alt="Semaine d’orientation post-Bac"
+     style="display:block;margin:auto;width:500px;height:90px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+   <h2 style="text-align:center;">Formulaire d'inscription à la  Semaine d’orientation post-Bac qui aura lieu le  24 août 2025 </h2>
+  <label>Prénom</label>
+  <input type="text" id="prenom" required>
+
+  <label>Nom</label>
+  <input type="text" id="nom" required>
+
+  <label>Numéro de téléphone</label>
+  <input type="tel" id="telephone" required>
+
+  <label>Série du Bac</label>
+  <select id="serie" required>
+    <option value="">-- Choisir --</option>
+    <option value="D">D</option>
+    <option value="A">A</option>
+    <option value="C">C</option>
+    <option value="E">E</option>
+    <option value="F">F</option>
+    <option value="G">G</option>
+    <option value="Autre">Autre</option>
+  </select>
+
+  <label>Souhaitez-vous continuer vos études à l’étranger ?</label>
+  <select id="etudes">
+    <option>Oui</option>
+    <option>Non</option>
+    <option>Peut-être</option>
+  </select>
+
+  <label>Préférez-vous une université publique ou privée ?</label>
+  <select id="universite">
+    <option>Publique</option>
+    <option>Privée</option>
+    <option>Peut-être</option>
+  </select>
+
+  <label>Avez-vous besoin d’une bourse pour poursuivre vos études ?</label>
+  <select id="bourse">
+    <option>Oui</option>
+    <option>Non</option>
+    <option>Peut-être</option>
+  </select>
+
+  <button type="submit">S'inscrire</button>
+
+</form>
+<form id="ticketForm" style="display:none;">
+  <div id="confirmation"></div>
+  <canvas id="ticketCanvas" width="500" height="170" style="display:none;"></canvas>
+  <a id="downloadLink" style="display:none;" download="ticket.png">Télécharger votre ticket</a>
+  <br>
+  <a id="whatsappLink" target="_blank" style="display:none;">Envoyer sur WhatsApp</a>
+  <br>
+  <button type="button" id="retourBtn" style="margin-top:15px;">Retour</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
