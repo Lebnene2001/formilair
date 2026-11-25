@@ -1,0 +1,39 @@
+:root{
+  --ink:#14213D; --ink-soft:#4A5878; --saffron:#F2B01E; --bg:#EEF2F7;
+  --card:#fff; --line:#CBD3E1; --err:#B3261E; --ok:#1B6B3A;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.5 var(--font)}
+.page{min-height:100vh;display:grid;place-items:start center;padding:clamp(1rem,4vw,3rem) 1rem}
+.card{width:100%;max-width:34rem;background:var(--card);border-radius:1rem;overflow:hidden;
+  box-shadow:0 1px 2px rgba(20,33,61,.08),0 8px 24px rgba(20,33,61,.08)}
+.card[hidden]{display:none}
+.head{background:var(--ink);color:#fff;padding:1.75rem 1.5rem 1.5rem;border-bottom:.4rem solid var(--saffron)}
+h1{margin:0;font-size:clamp(1.5rem,5vw,1.9rem);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+.sub{margin:.5rem 0 0;color:#D6DDEB}
+form{padding:1.5rem}
+.field{margin-bottom:1.1rem}
+label{display:block;margin-bottom:.35rem;font-weight:600}
+input,select{width:100%;padding:.75rem .8rem;font:inherit;color:inherit;background:#fff;
+  border:1.5px solid var(--line);border-radius:.6rem;min-height:2.9rem}
+input:focus-visible,select:focus-visible,.btn:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--err)}
+.err{margin:.3rem 0 0;color:var(--err);font-size:.9rem;min-height:0}
+.err:empty{display:none}
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:3rem;padding:.75rem 1.1rem;
+  font:700 1rem var(--font);color:var(--ink);background:var(--saffron);border:2px solid var(--saffron);
+  border-radius:.6rem;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(.96)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.btn.ghost{background:transparent;border-color:var(--ink)}
+#ticketView{padding:1.5rem}
+.ok{margin:0 0 1rem;font-size:1.15rem;font-weight:700;color:var(--ok);text-align:center}
+.ok:focus{outline:none}
+canvas{display:block;width:100%;height:auto;border-radius:.6rem;margin-bottom:1rem}
+.note{margin:0 0 1rem;padding:.7rem .9rem;background:#FFF4D6;border-radius:.5rem;font-size:.92rem}
+.actions{display:grid;gap:.7rem}
+@media (min-width:34rem){#ticketView{padding:1.75rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
